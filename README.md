@@ -4,9 +4,17 @@ Single-file Miro REST API v2 client. Zero dependencies. Python 3.7+.
 
 65 commands covering boards, sticky notes, shapes, cards, connectors, frames, text, images, embeds, tags, groups, documents, and app cards.
 
-## Install (one command)
+## Install
 
-Get the token from your team lead, then run:
+Paste this into Claude Code (replace `YOUR_TOKEN` with the token from your team lead):
+
+```
+Install the miro-cli skill: download https://raw.githubusercontent.com/tolmme/miro-cli/main/install.py and run it with my token: YOUR_TOKEN
+```
+
+That's it. Claude will download the script, save the token, and set up the skill. Restart Claude Code and ask it to "list my Miro boards" to verify.
+
+### Manual install (without Claude Code)
 
 ```bash
 # macOS / Linux
@@ -14,23 +22,6 @@ python3 <(curl -s https://raw.githubusercontent.com/tolmme/miro-cli/main/install
 
 # Windows (PowerShell)
 curl -o install.py https://raw.githubusercontent.com/tolmme/miro-cli/main/install.py; python install.py YOUR_TOKEN; del install.py
-```
-
-This downloads `miro.py`, saves the token, and creates the Claude Code skill. Restart Claude Code and you're done.
-
-## Manual Installation
-
-If you prefer to set things up yourself:
-
-```bash
-# 1. Download
-curl -O https://raw.githubusercontent.com/tolmme/miro-cli/main/miro.py
-
-# 2. Save token
-export MIRO_TOKEN="your-token-here"
-
-# 3. Use it
-python3 miro.py boards_list '{}'
 ```
 
 No `pip install` needed. Uses only Python standard library.
