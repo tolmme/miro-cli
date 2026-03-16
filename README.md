@@ -4,38 +4,36 @@ Single-file Miro REST API v2 client. Zero dependencies. Python 3.7+.
 
 65 commands covering boards, sticky notes, shapes, cards, connectors, frames, text, images, embeds, tags, groups, documents, and app cards.
 
-## Quick Start
+## Install (one command)
+
+Get the token from your team lead, then run:
 
 ```bash
-# 1. Get your API token
-#    Go to https://miro.com/app/settings/user-profile/apps
-#    Click "Create new app" → set scopes: boards:read, boards:write
-#    Install to your team → copy access token
+# macOS / Linux
+python3 <(curl -s https://raw.githubusercontent.com/tolmme/miro-cli/main/install.py) YOUR_TOKEN
 
-# 2. Save token (pick one method)
-export MIRO_TOKEN="your-token-here"          # env var (any OS)
+# Windows (PowerShell)
+curl -o install.py https://raw.githubusercontent.com/tolmme/miro-cli/main/install.py; python install.py YOUR_TOKEN; del install.py
+```
+
+This downloads `miro.py`, saves the token, and creates the Claude Code skill. Restart Claude Code and you're done.
+
+## Manual Installation
+
+If you prefer to set things up yourself:
+
+```bash
+# 1. Download
+curl -O https://raw.githubusercontent.com/tolmme/miro-cli/main/miro.py
+
+# 2. Save token
+export MIRO_TOKEN="your-token-here"
 
 # 3. Use it
 python3 miro.py boards_list '{}'
-python3 miro.py sticky_create '{"board_id":"abc123","content":"Hello!","fill_color":"light_yellow","position":{"x":0,"y":0}}'
 ```
 
-## Installation
-
-Just download the single file:
-
-```bash
-curl -O https://raw.githubusercontent.com/tolmme/miro-cli/main/miro.py
-chmod +x miro.py
-```
-
-Or clone:
-
-```bash
-git clone https://github.com/tolmme/miro-cli.git
-```
-
-No `pip install` needed. Uses only Python standard library (`urllib`, `json`).
+No `pip install` needed. Uses only Python standard library.
 
 ## Authentication
 
