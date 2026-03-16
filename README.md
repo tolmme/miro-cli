@@ -57,7 +57,7 @@ On Windows, the config file path is `%APPDATA%\miro-cli\token`.
 4. Click **Install app and get OAuth token** on your team
 5. Copy the access token
 
-Each user needs their own token. Board owners don't share API keys — each collaborator creates their own Miro app and gets their own token.
+For small teams, one person can create the token and share it with the team. Everyone uses the same `MIRO_TOKEN`. For larger organizations, each user should create their own app and token.
 
 ### Multiple Accounts
 
